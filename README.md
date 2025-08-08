@@ -1,77 +1,102 @@
-# Dim-Works-Kernel
-Dim Works Kernel Documentation
+# 🚀 Dim Works Kernel Documentation
 
-# 📘 Dim Works Kernel Documentation
-
-This repository contains structured technical documentation for the **Dim Works Kernel**, a modular backend system designed for secure, multi-user enterprise applications.
-
-The documentation is organized into five main categories:
+Dim Works Kernel es una base tecnológica modular, segura y escalable para construir aplicaciones empresariales personalizadas. Este repositorio documenta su arquitectura, instalación, uso y casos de aplicación.
 
 ---
 
-## 🧠 (0) Dim Works Kernel Overview
+## 🧠 ¿Qué es Dim Works Kernel?
 
-General information about the kernel, its architecture, and core principles.
+Dim Works Kernel es el núcleo de software desarrollado desde 2007 por Dim Works, diseñado para crear soluciones empresariales a medida. A diferencia del software genérico, el Kernel se adapta completamente a las necesidades del negocio.
 
-- What is Dim Works Kernel?
-- Modular design and multi-user capabilities
-- Security and token-based access
+> “Es como el chasis y motor de un F1: no es un sistema genérico, sino una base lista para construir cualquier solución empresarial.”
 
----
+### 🔧 Características clave
 
-## 🛠️ Developer Guide
-
-Resources for developers integrating or extending the kernel.
-
-- Module development
-- API integration
-- Token validation and HMAC usage
-- SQLite and file system structure
+- Multiusuario en la nube
+- Seguridad avanzada (tokens, backups, validación)
+- Modularidad total
+- Desarrollo rápido (MVP funcional en semanas)
+- Iteración continua durante el contrato
 
 ---
 
-## 📚 Introduction & Key Concepts
+## 🧩 Aplicaciones construidas con Dim Works Kernel
 
-Conceptual foundation for understanding the system.
-
-- Roles and permissions
-- Gallery structure
-- Lazy loading and performance optimization
-
----
-
-## ⚙️ Installation & Maintenance
-
-Instructions for setting up and maintaining the system.
-
-- Installation steps
-- Configuration files
-- User and permission setup
-- Backup and update procedures
+| 🏭 Sector       | 🧰 Aplicación             | 🔍 Descripción breve |
+|----------------|---------------------------|----------------------|
+| Agrícola       | PWA Offline               | Evaluación de cultivos sin conexión |
+| Logística      | Cadena de Envío           | Gestión de choferes, camiones, kilometraje |
+| Manufactura    | Sistema de Calidad 5S     | Evaluación de procesos |
+| Finanzas       | Calculadoras de Pronóstico| Estimación de inventario y cotizaciones |
+| Retail         | POS y E-commerce          | Ventas, inventario, clientes |
+| Corporativo    | ERP y CRM                 | Gestión integral de operaciones |
 
 ---
 
-## 👥 End User Manual
+## 📚 Estructura de la Documentación
 
-Guides for non-technical users interacting with the system.
+La documentación se organiza en cinco secciones principales:
 
-- Uploading files and images
-- Navigating galleries
-- Managing private and shared content
+### 🧠 (0) Dim Works Kernel
+
+- Introducción al núcleo
+- Arquitectura modular
+- Seguridad y validación de tokens
+- Estructura de archivos y SQLite
+
+### 🛠️ Guía para Desarrolladores
+
+- Desarrollo de módulos
+- Integración con APIs externas
+- Validación HMAC y autenticación
+- Optimización de rendimiento
+
+### 📖 Introducción y Conceptos Clave
+
+- Roles y permisos
+- Galerías y estructura de datos
+- Lazy loading y eficiencia
+
+### ⚙️ Instalación y Mantenimiento
+
+- Requisitos del sistema
+- Instalación paso a paso
+- Configuración inicial
+- Backup y actualizaciones
+
+### 👥 Manual de Usuario Final
+
+- Subida de archivos e imágenes
+- Navegación por galerías
+- Gestión de contenido privado y compartido
 
 ---
 
-## 📄 License
+## 💼 Modelo de Negocio
 
-This documentation is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License**.
+Dim Works ofrece un modelo flexible:
 
-You may share this content with attribution, but you may not modify or use it for commercial purposes.
+- Inscripción inicial + mensualidades
+- MVP funcional desde el mes 1
+- Desarrollo iterativo continuo
+- Hosting, seguridad y soporte incluidos
 
-🔗 [View full license terms](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+### Opciones post-contrato
+
+- 🔄 Continuidad con descuento
+- 🛒 Compra total de licencia (buyout)
 
 ---
 
-## 🧑‍💻 Maintainer
+## 📄 Licencia
 
-Created and maintained by [Leuyim](https://github.com/leuyim).  
-Dim Works Kernel is a private product. This documentation is for educational and integration purposes only.
+Este contenido está bajo la **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License**.
+
+🔗 [Ver términos completos](https://creativecommons.org/licenses/by-nc-nd/4.0/)
+
+---
+
+## 🧑‍💻 Autor y Mantenimiento
+
+Documentación mantenida por [Leuyim](https://github.com/leuyim).  
+Dim Works Kernel es un producto privado. Esta documentación es para fines educativos e integrativos.
