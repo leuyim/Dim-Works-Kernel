@@ -174,8 +174,6 @@ Sistema: Linux/Unix
 ### Estructura de Archivos
 ```text
 /www/
-├── config.php              # Configuración principal
-├── securitypars.php        # Parámetros de seguridad
 ├── incspt/                 # Librerías y dependencias
 │   ├── classes/
 │   ├── jquery/
@@ -261,6 +259,7 @@ $campaignId = savePushCampaign(
 ## Gestión de Módulos
 
 ### Crear un Nuevo Módulo
+ver artículo: https://helpdesk.dimworks.org/public/show/anatoma-de-un-mdulo-estructura-de-archivos-y-registro-en-el-panel-de-administracin
 
 #### Estructura del Módulo
 ```text
@@ -277,10 +276,7 @@ modulos/mi_modulo/
 ```
 
 #### Archivo de Configuración Principal
-```php
-echo "Bienvenido a Mi Módulo";
-echo "<p>Contenido principal del módulo...</p>";
-```
+ver artículo: https://helpdesk.dimworks.org/public/show/tu-primer-mdulo-hola-mundo-con-la-funcin-bodymodule
 
 #### Sistema de Traducciones
 ```php
