@@ -103,94 +103,76 @@ Dim Works Kernel es un producto privado. Esta documentación es para fines educa
 
 ---
 
-Dim Works Kernel - Documentación Técnica
-Tabla de Contenidos
-Descripción General
+# Dim Works Kernel - Documentación Técnica
 
-Características Principales
+## Tabla de Contenidos
+- [Descripción General](#descripción-general)
+- [Características Principales](#características-principales)
+- [Requisitos del Sistema](#requisitos-del-sistema)
+- [Instalación y Configuración](#instalación-y-configuración)
+- [Estructura del Sistema](#estructura-del-sistema)
+- [Uso de Funciones Principales](#uso-de-funciones-principales)
+- [Gestión de Módulos](#gestión-de-módulos)
+- [Solución de Problemas](#solución-de-problemas)
+- [Conclusión](#conclusión)
 
-Requisitos del Sistema
-
-Instalación y Configuración
-
-Estructura del Sistema
-
-Uso de Funciones Principales
-
-Gestión de Módulos
-
-Sistema de Seguridad
-
-API y Funcionalidades
-
-Optimización y Rendimiento
-
-Solución de Problemas
-
-Descripción General
+## Descripción General
 Dim Works Kernel es un sistema de gestión de contenido (CMS) y framework PHP de alto rendimiento desarrollado por Dim Works. Proporciona una base sólida para aplicaciones web empresariales con énfasis en seguridad, escalabilidad y mantenibilidad.
 
-Versión Actual: 5.9.999
-Última Actualización: 05/09/2025
-Desarrollador Principal: Oliver Leuyim Angel
+**Versión Actual:** 5.9.999  
+**Última Actualización:** 05/09/2025  
+**Desarrollador Principal:** Oliver Leuyim Angel
 
-Características Principales
-🔒 Seguridad Avanzada (WAF V4)
-Firewall de Aplicación Web con detección multi-capa
+## Características Principales
 
-Rate Limiting inteligente (333 requests/minuto por IP)
+### 🔒 Seguridad Avanzada (WAF V4)
+- Firewall de Aplicación Web con detección multi-capa
+- Rate Limiting inteligente (333 requests/minuto por IP)
+- Auto-baneo de IPs maliciosas
+- Protección contra inyecciones SQL y XSS
+- Geolocalización integrada
+- Modo aprendizaje para testing
 
-Auto-baneo de IPs maliciosas
+### 🖼️ Procesamiento de Imágenes
+- Redimensionamiento automático y optimización
+- Soporte multi-formato (JPEG, PNG, GIF, WebP, AVIF)
+- Cache inteligente con expiry de 30 días
+- Detección automática de capacidades del servidor (Imagick/GD)
 
-Protección contra inyecciones SQL y XSS
+### 📊 Analytics y Logging
+- Tracking completo de visitas y comportamiento
+- Métricas de rendimiento en tiempo real
+- Análisis de dispositivos y navegadores
+- Sistema de logs estructurado
 
-Geolocalización integrada
+### 🗄️ Gestión de Base de Datos
+- Backup automático con compresión
+- Sincronización de esquemas
+- Optimización de índices
+- Manejo de conexiones eficiente
 
-Modo aprendizaje para testing
+## Requisitos del Sistema
 
-🖼️ Procesamiento de Imágenes
-Redimensionamiento automático y optimización
-
-Soporte multi-formato (JPEG, PNG, GIF, WebP, AVIF)
-
-Cache inteligente con expiry de 30 días
-
-Detección automática de capacidades del servidor (Imagick/GD)
-
-📊 Analytics y Logging
-Tracking completo de visitas y comportamiento
-
-Métricas de rendimiento en tiempo real
-
-Análisis de dispositivos y navegadores
-
-Sistema de logs estructurado
-
-🗄️ Gestión de Base de Datos
-Backup automático con compresión
-
-Sincronización de esquemas
-
-Optimización de índices
-
-Manejo de conexiones eficiente
-
-Requisitos del Sistema
-Requisitos Mínimos
-bash
-PHP >= 8.0.0
-MySQL >= 5.7 / MariaDB >= 10.3
-Memoria PHP: 128MB mínimo
+### Requisitos Mínimos
+```bash
+PHP >= 8.0.0  
+MySQL >= 5.7 / MariaDB >= 10.3  
+Memoria PHP: 128MB mínimo  
 Extensions: mysqli, gd, json
-Requisitos Recomendados
-bash
-PHP >= 8.1
-Memoria PHP: 384MB
-Extensions: imagick, curl, gmp, bcmath
+```
+
+### Requisitos Recomendados
+```bash
+PHP >= 8.1  
+Memoria PHP: 384MB  
+Extensions: imagick, curl, gmp, bcmath  
 Sistema: Linux/Unix
-Instalación y Configuración
-1. Estructura de Archivos
-text
+```
+
+## Instalación y Configuración
+
+### Estructura de Archivos
+```text
 /www/
 ├── config.php              # Configuración principal
 ├── securitypars.php        # Parámetros de seguridad
@@ -202,189 +184,157 @@ text
 ├── bloques/                # Bloques de contenido
 ├── themes/                 # Temas y plantillas
 └── BackUp_DB/              # Respaldos automáticos
+```
 
-Estructura del Sistema
-Arquitectura Modular
-text
+## Estructura del Sistema
+
+### Arquitectura Modular
+```text
 modulos/
-├── usuarios/           # Gestión de usuarios
+├── usuarios/               # Gestión de usuarios
 │   ├── config.php
 │   ├── Lang/
 │   │   ├── es.php
 │   │   └── en.php
 │   └── notificar.php
-├── productos/           # Catálogo de productos
-└── blog/                # Sistema de blog
-Sistema de Bloques
-php
-// Posiciones disponibles
-bloque2();  // Lateral izquierdo
-bloque3();  // Lateral derecho  
-bloque4();  // Cabecera
-bloque5();  // Pie de página
-Gestión de Temas
-php
-// Configuración de tema
+├── productos/              # Catálogo de productos
+└── blog/                   # Sistema de blog
+```
 
-Uso de Funciones Principales
-Procesamiento de Imágenes
-php
-// Uso básico
-<img src="?pic=<?= stringDWK_encode('imagen.jpg') ?>&width=800&height=600&compressimg=75">
+### Sistema de Bloques
+```php
+bloque2(); // Lateral izquierdo
+bloque3(); // Lateral derecho
+bloque4(); // Cabecera
+bloque5(); // Pie de página
+```
 
-// Opciones avanzadas
+## Uso de Funciones Principales
+
+### Procesamiento de Imágenes
+```php
 $processor = new ImageProcessor(
-    'imagen.jpg',     // URL de imagen
-    800,              // Ancho máximo
-    600,              // Alto máximo
-    75                // Calidad (0-100)
+  'imagen.jpg', // URL de imagen
+  800,          // Ancho máximo
+  600,          // Alto máximo
+  75            // Calidad (0-100)
 );
 $processor->process();
-Sistema de Notificaciones
-php
-// Notificación simple
-notificacion(
-    "Operación Exitosa",
-    "Los cambios se guardaron correctamente",
-    "exito",
-    "✅",
-    5000
-);
+```
 
-// Notificación con acciones
-notificacion(
-    "Confirmación Requerida",
-    "¿Está seguro de eliminar este registro?",
-    "advertencia",
-    "⚠️",
-    0,  // Persistente
-    [
-        [
-            'texto' => 'Confirmar',
-            'accion' => 'confirmDelete()',
-            'clase_css' => 'btn-danger'
-        ],
-        [
-            'texto' => 'Cancelar', 
-            'tipo' => 'enlace',
-            'url' => '/cancelar'
-        ]
-    ]
-);
-Geolocalización
-php
-// Obtener ubicación
-get_location5(true, false);  // defer, required
+### Sistema de Notificaciones
+```php
+notificacion("Operación Exitosa", "Los cambios se guardaron correctamente", "exito", "✅", 5000);
 
-// En módulos (acceso a variables globales)
+notificacion("Confirmación Requerida", "¿Está seguro de eliminar este registro?", "advertencia", "⚠️", 0, [
+  [ 'texto' => 'Confirmar', 'accion' => 'confirmDelete()', 'clase_css' => 'btn-danger' ],
+  [ 'texto' => 'Cancelar', 'tipo' => 'enlace', 'url' => '/cancelar' ]
+]);
+```
+
+### Geolocalización
+```php
+get_location5(true, false); // defer, required
+
 global $pais, $ciudad, $codigopostal;
 echo "Ubicación: $ciudad, $pais";
-Web Push Notifications
-php
-// Habilitar notificaciones push
-JSwebpushSuscript(true, false);  // defer, required
+```
 
-// Enviar campaña push
+### Web Push Notifications
+```php
+JSwebpushSuscript(true, false); // defer, required
+
 $campaignId = savePushCampaign(
-    "Promoción Especial",
-    "¡Oferta por tiempo limitado!",
-    "Descuento del 20% en todos los productos",
-    "/ofertas",
-    "/icon.png",
-    'manual',           // Tipo de iniciación
-    null,               // Programación (null para inmediato)
-    null,               // ID de campaña (null para nueva)
-    '{"user_status":"all"}',  // Filtros
-    "promo"             // Tag para segmentación
+  "Promoción Especial",
+  "¡Oferta por tiempo limitado!",
+  "Descuento del 20% en todos los productos",
+  "/ofertas",
+  "/icon.png",
+  'manual',
+  null,
+  null,
+  '{"user_status":"all"}',
+  "promo"
 );
-Gestión de Módulos
-Crear un Nuevo Módulo
-1. Estructura del Módulo
-text
+```
+
+## Gestión de Módulos
+
+### Crear un Nuevo Módulo
+
+#### Estructura del Módulo
+```text
 modulos/mi_modulo/
-├── config.php          # Punto de entrada
+├── config.php              # Punto de entrada
 ├── Lang/
-│   ├── es.php         # Español
-│   └── en.php         # Inglés
-├── notificar.php       # Sistema de notificaciones
-├── admin/       # administracion
-|   ├── nav.php         # menu
-│   └── index.php         # panel
-└── assets/            # Recursos estáticos
-3. Archivo de Configuración Principal
-php
-<?php
-// modulos/mi_modulo/config.php
-$titulo_modulo = "Mi Módulo Personalizado";
+│   ├── es.php              # Español
+│   └── en.php              # Inglés
+├── notificar.php           # Sistema de notificaciones
+├── admin/                  # Administración
+│   ├── nav.php             # Menú
+│   └── index.php           # Panel
+└── assets/                 # Recursos estáticos
+```
 
-// Lógica del módulo
-if (isset($_GET['ext'])) {
-    $extension = $_GET['ext'];
-    // Manejar extensiones específicas
-    switch($extension) {
-        case 'lista':
-            include 'lista.php';
-            break;
-        case 'detalle':
-            include 'detalle.php';
-            break;
-    }
-} else {
-    // Vista principal del módulo
-    echo "<h1>Bienvenido a Mi Módulo</h1>";
-    echo "<p>Contenido principal del módulo...</p>";
-}
-?>
-3. Sistema de Traducciones
-php
-<?php
-// modulos/mi_modulo/Lang/es.php
-$lang = [
-    'welcome' => 'Bienvenido',
-    'description' => 'Descripción del módulo',
-    'save' => 'Guardar',
-    'cancel' => 'Cancelar'
-];
-?>
+#### Archivo de Configuración Principal
+```php
+echo "Bienvenido a Mi Módulo";
+echo "<p>Contenido principal del módulo...</p>";
+```
 
-<?php
-// modulos/mi_modulo/Lang/en.php  
-$lang = [
-    'welcome' => 'Welcome',
-    'description' => 'Module description',
-    'save' => 'Save',
-    'cancel' => 'Cancel'
-];
-?>
+#### Sistema de Traducciones
+```php
+// Español
+[
+  'title' => 'Bienvenido',
+  'description' => 'Descripción del módulo',
+  'save' => 'Guardar',
+  'cancel' => 'Cancelar'
+]
 
-Solución de Problemas
-Errores Comunes y Soluciones
-1. Error de Memoria
-text
+// Inglés
+[
+  'title' => 'Welcome',
+  'description' => 'Module description',
+  'save' => 'Save',
+  'cancel' => 'Cancel'
+]
+```
+
+## Solución de Problemas
+
+### Errores Comunes y Soluciones
+
+#### Error de Memoria
+```text
 Error: "I_S ML 128M - 64M"
-Solución: Aumentar memory_limit en php.ini
-
-ini
+```
+**Solución:** Aumentar `memory_limit` en `php.ini`
+```ini
 memory_limit = 256M
-2. Tiempo de Ejecución Excedido
-text
-Maximum execution time exceeded
-Solución: Configurar tiempo máximo
+```
 
-php
+#### Tiempo de Ejecución Excedido
+```text
+Maximum execution time exceeded
+```
+**Solución:**
+```php
 ini_set('max_execution_time', 900);
 set_time_limit(900);
+```
 
-4. Problemas de Seguridad
-Solución: Revisar logs de amenazas
+### Problemas de Seguridad
+- Revisar logs de amenazas
 
-Métricas de Rendimiento
+### Métricas de Rendimiento
+- Consultar panel de métricas en tiempo real
 
+## Conclusión
 
-Conclusión
 Dim Works Kernel proporciona una base sólida y segura para el desarrollo de aplicaciones web empresariales. Su arquitectura modular, sistema de seguridad avanzado y herramientas de optimización lo hacen adecuado para proyectos de cualquier escala.
-
 
 Para soporte técnico y actualizaciones, contactar al equipo de desarrollo de Dim Works.
 
-*Documentación técnica para Dim Works Kernel v5.9.999 - Sistema desarrollado por Oliver Leuyim Angel*
+> Documentación técnica para Dim Works Kernel v5.9.999  
+> Sistema desarrollado por Oliver Leuyim Angel
