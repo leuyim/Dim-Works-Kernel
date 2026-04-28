@@ -71,7 +71,7 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --dwk-font-base: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
     --dwk-radius-base: 12px;
 
-    /* === 2. Paleta de Identidad Emilia Desarrollos === */
+    /* === 2. Paleta de Identidad BRAND design === */
     --brand-color: #c5a059;
     --brand-hover: #b38f49;
     --brand-active: #9e7d3a;
