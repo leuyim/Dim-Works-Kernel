@@ -68,10 +68,10 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --dwk-color-bg: #ffffff;
     --dwk-color-text: #1a1a1a;
     --dwk-color-accent: #c5a059;
-    --dwk-font-base: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
+    --dwk-font-base: 'Montserrat', 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
     --dwk-radius-base: 12px;
 
-    /* === 2. Paleta de Identidad BRAND design === */
+    /* === 2. Paleta de Identidad Emilia Desarrollos === */
     --brand-color: #c5a059;
     --brand-hover: #b38f49;
     --brand-active: #9e7d3a;
@@ -79,7 +79,43 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --brand-gradient: linear-gradient(135deg, #c5a059 0%, #b38f49 100%);
     --brand-shadow: rgba(197, 160, 89, 0.3);
 
-    /* === 3. Layout Base === */
+    /* === 3. Fuentes Principales y Secundarias === */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Outfit', sans-serif;
+    --font-monospace: 'Courier New', Courier, monospace;
+
+    /* === 4. Fuentes y Colores para Encabezados (Titles) === */
+    --font-h1: var(--font-primary);
+    --font-h1-color: var(--text-primary);
+    --font-h1-bg: transparent;
+    --font-h1-size: 2.25rem;
+    
+    --font-h2: var(--font-primary);
+    --font-h2-color: var(--text-primary);
+    --font-h2-bg: transparent;
+    --font-h2-size: 1.75rem;
+    
+    --font-h3: var(--font-secondary);
+    --font-h3-color: var(--brand-color);
+    --font-h3-bg: transparent;
+    --font-h3-size: 1.5rem;
+
+    --font-h4: var(--font-secondary);
+    --font-h4-color: var(--text-secondary);
+    --font-h4-bg: transparent;
+    --font-h4-size: 1.25rem;
+
+    --font-h5: var(--font-secondary);
+    --font-h5-color: var(--text-primary);
+    --font-h5-bg: transparent;
+    --font-h5-size: 1rem;
+
+    --font-h6: var(--font-secondary);
+    --font-h6-color: var(--text-muted);
+    --font-h6-bg: transparent;
+    --font-h6-size: 0.875rem;
+
+    /* === 5. Layout Base === */
     --bg-primary: #f8fafc;
     --bg-secondary: #ffffff;
     --bg-sidebar: #2d3540;
@@ -87,7 +123,7 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --bg-hover: #f1f5f9;
     --bg-active: #e2e8f0;
 
-    /* === 4. Tipografía General === */
+    /* === 6. Tipografía General y Textos === */
     --text-primary: #1e293b;
     --text-secondary: #475569;
     --text-muted: #64748b;
@@ -95,7 +131,7 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --text-accent: #c5a059;
     --text-disabled: #94a3b8;
 
-    /* === 5. Headers & Footers === */
+    /* === 7. Headers & Footers === */
     --header-bg: var(--bg-secondary);
     --header-text: var(--text-primary);
     --header-border: var(--border-color);
@@ -103,7 +139,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --footer-text: var(--text-inverse);
     --footer-border: rgba(255, 255, 255, 0.05);
 
-    /* === 6. Nav Menus & Megamenus === */
+    /* === 8. Nav Menus & Megamenus === */
+    --font-nav: var(--font-primary);
     --nav-bg: transparent;
     --nav-link: rgba(255, 255, 255, 0.75);
     --nav-link-hover: #ffffff;
@@ -114,7 +151,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --megamenu-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --megamenu-border: var(--border-color);
 
-    /* === 7. Sidebars === */
+    /* === 9. Sidebars === */
+    --font-sidebar: var(--font-secondary);
     --sidebar-bg: #2d3540;
     --sidebar-text: rgba(255, 255, 255, 0.75);
     --sidebar-link: rgba(255, 255, 255, 0.75);
@@ -122,7 +160,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --sidebar-link-active: var(--brand-color);
     --sidebar-border: rgba(0, 0, 0, 0.2);
 
-    /* === 8. Modals === */
+    /* === 10. Modals === */
+    --font-modal: var(--font-primary);
     --modal-bg: var(--bg-secondary);
     --modal-backdrop: rgba(0, 0, 0, 0.5);
     --modal-border: var(--border-color);
@@ -131,12 +170,13 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --modal-footer-bg: var(--bg-primary);
     --modal-text: var(--text-primary);
 
-    /* === 9. Copyright === */
+    /* === 11. Copyright === */
     --copyright-bg: transparent;
     --copyright-text: rgba(255, 255, 255, 0.55);
     --copyright-border: rgba(0, 0, 0, 0.2);
 
-    /* === 10. Notifications & Alerts === */
+    /* === 12. Notifications & Alerts === */
+    --font-alert: var(--font-secondary);
     --notif-bg: var(--bg-secondary);
     --notif-text: var(--text-primary);
     --notif-border: var(--border-color);
@@ -153,7 +193,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --alert-info-text: #1d4ed8;
     --alert-info-border: #bfdbfe;
 
-    /* === 11. Tables === */
+    /* === 13. Tables === */
+    --font-table: var(--font-secondary);
     --table-bg: var(--bg-secondary);
     --table-header-bg: var(--bg-primary);
     --table-header-text: var(--text-muted);
@@ -162,7 +203,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --table-row-hover: var(--bg-hover);
     --table-border: var(--border-color);
 
-    /* === 12. Forms & Inputs (Text, Select, Date, Mail, Number) === */
+    /* === 14. Forms & Inputs (Text, Select, Date, Mail, Number) === */
+    --font-form: var(--font-secondary);
     --input-bg: #ffffff;
     --input-text: var(--text-primary);
     --input-border: var(--border-color);
@@ -176,7 +218,8 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --input-mail-bg: #ffffff;
     --input-number-bg: #ffffff;
 
-    /* === 13. Paginación === */
+    /* === 15. Paginación === */
+    --font-pagination: var(--font-primary);
     --pagination-bg: var(--bg-primary);
     --pagination-text: var(--text-secondary);
     --pagination-hover-bg: var(--bg-hover);
@@ -185,13 +228,13 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --pagination-active-text: var(--text-inverse);
     --pagination-border: var(--border-color);
 
-    /* === 14. Logos e Imagotipos === */
+    /* === 16. Logos e Imagotipos === */
     --logo-width: 100%;
     --logo-filter: none;
     --imagotipo-color: var(--brand-color);
     --logo-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 
-    /* === 15. Bloques, Galerías y Carouseles === */
+    /* === 17. Bloques, Galerías y Carouseles === */
     --block-bg: var(--bg-secondary);
     --block-padding: 2rem;
     --block-border: var(--border-color);
@@ -209,23 +252,17 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --carousel-indicator-bg: rgba(255, 255, 255, 0.4);
     --carousel-indicator-active-bg: var(--brand-color);
 
-    /* === 16. Titles (Title1, Title2) === */
-    --title1-color: var(--text-primary);
-    --title1-size: 2rem;
-    --title2-color: var(--brand-color);
-    --title2-size: 1.5rem;
-    --title-font: 'Outfit', sans-serif;
-
-    /* === 17. HR (Horizontal Rule) === */
+    /* === 18. HR (Horizontal Rule) === */
     --hr-border: var(--border-color);
     --hr-margin: 1.75rem 0;
 
-    /* === 18. LI (Lists) === */
+    /* === 19. LI (Lists) === */
     --li-bullet-color: var(--brand-color);
     --li-hover-bg: var(--bg-hover);
     --li-spacing: 0.5em;
 
-    /* === 19. Buttons === */
+    /* === 20. Buttons === */
+    --font-btn: var(--font-primary);
     --btn-bg: var(--brand-color);
     --btn-text: var(--text-inverse);
     --btn-hover-bg: var(--brand-hover);
@@ -235,18 +272,18 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --btn-alt-text: var(--text-inverse);
     --btn-alt-hover: #334155;
 
-    /* === 20. Links & Hovers === */
+    /* === 21. Links & Hovers === */
     --link-color: var(--brand-color);
     --link-hover-color: var(--brand-hover);
     --link-active-color: var(--brand-active);
 
-    /* === 21. Icons & Emojis === */
+    /* === 22. Icons & Emojis === */
     --icon-color: var(--brand-color);
     --icon-hover-color: var(--brand-hover);
     --emoji-size: 1.2rem;
     --emoji-opacity: 0.9;
 
-    /* === 22. Shadows, Borders & Radius === */
+    /* === 23. Shadows, Borders & Radius === */
     --border-color: #e2e8f0;
     --border-light: #f1f5f9;
     --border-dark: #cbd5e1;
@@ -263,7 +300,7 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --s-dropdown: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
     --s-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
 
-    /* === 23. Navigation & Sidebar specific === */
+    /* === 24. Navigation & Sidebar specific === */
     --nav-item-bg-hover: rgba(255, 255, 255, 0.05);
     --nav-item-bg-active: rgba(197, 160, 89, 0.15);
     --nav-item-text: rgba(255, 255, 255, 0.75);
