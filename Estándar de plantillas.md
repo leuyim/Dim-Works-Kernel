@@ -51,9 +51,9 @@ Lo obligatorio es la separación conceptual de activos, no la jerarquía exacta 
 │   ├── js/
 │   │   └── main.js
 │   └── img/
-├── manifest.json
-├── sw.js
-└── theme.info.php
+├── index.php
+├── index_home.html o index_home.php
+└── index_sub.html o index_sub.php
 ```
 
 ---
