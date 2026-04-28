@@ -68,10 +68,10 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
     --dwk-color-bg: #ffffff;
     --dwk-color-text: #1a1a1a;
     --dwk-color-accent: #c5a059;
-    --dwk-font-base: 'Montserrat', 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
+    --dwk-font-base: 'Ubuntu', 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
     --dwk-radius-base: 12px;
 
-    /* === 2. Paleta de Identidad Emilia Desarrollos === */
+    /* === 2. Paleta de Identidad Brand of web === */
     --brand-color: #c5a059;
     --brand-hover: #b38f49;
     --brand-active: #9e7d3a;
