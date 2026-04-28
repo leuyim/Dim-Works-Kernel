@@ -40,6 +40,7 @@ Toda plantilla DWK debe cumplir de forma estricta con los siguientes principios:
 La siguiente estructura es recomendada como referencia.
 Lo obligatorio es la separación conceptual de activos, no la jerarquía exacta de directorios.
 
+```text
 /theme-name/
 ├── assets/
 │   ├── css/
@@ -53,6 +54,7 @@ Lo obligatorio es la separación conceptual de activos, no la jerarquía exacta 
 ├── manifest.json
 ├── sw.js
 └── theme.info.php
+```
 
 ---
 
@@ -60,7 +62,7 @@ Lo obligatorio es la separación conceptual de activos, no la jerarquía exacta 
 
 ### 4.1 Variables Nativas
 Es obligatorio centralizar la identidad visual en la raíz del documento mediante CSS nativo para permitir la manipulación dinámica.
-
+```css
 :root {
   --dwk-color-bg: #ffffff;
   --dwk-color-text: #1a1a1a;
@@ -68,7 +70,7 @@ Es obligatorio centralizar la identidad visual en la raíz del documento mediant
   --dwk-font-base: system-ui, -apple-system, BlinkMacSystemFont;
   --dwk-radius-base: 8px;
 }
-
+```
 En caso de requerir la carga de librerías de terceros (Bootstrap, Tailwind, etc.), estas deben ser referenciadas mediante etiquetas `<script>` o `<link>` en las secciones correspondientes de la plantilla, sin alterar el DOM o el flujo de control del Kernel.
 
 Los tokens deben permitir la extensión futura a esquemas como dark mode o high‑contrast.
@@ -137,7 +139,6 @@ Las métricas siguientes representan los objetivos de calidad que un theme DWK d
 
 ## 10. Integración con el Kernel
 - La carga de librerías comunes de administración será inyectada dinámicamente por las rutinas del `index.php` del núcleo, no forzadas por el tema.
-- El archivo `theme.info.php` es el único puente de lectura de metadatos permitido entre el diseño y la configuración del Kernel.
 
 ---
 
@@ -159,6 +160,7 @@ Todo theme DWK **debe renderizar y permitir** la siguiente estructura mínima en
 
 Implementación obligatoria:
 
+```php
 <title><?php
     if (empty($mod_name)) {
         echo $page_name;
@@ -178,7 +180,7 @@ Implementación obligatoria:
 <?php setfeeds(); ?>
 <?php multilng(); ?>
 <?php facebookconnect(); ?>
-
+```
 Estas funciones:
 - Son controladas exclusivamente por el Kernel  
 - No deben ser reemplazadas, eliminadas o redefinidas por el theme  
@@ -188,9 +190,9 @@ Estas funciones:
 ### X.2 Renderizado Obligatorio del Contenido Principal
 
 Todo theme DWK debe incluir obligatoriamente la función:
-
+```php
 <?php bodymodule(); ?>
-
+```
 Esta función es responsable de renderizar la totalidad del contenido dinámico generado por los módulos del sistema.  
 Un theme que no incluya `bodymodule()` no es considerado compatible con DWK.
 
@@ -199,9 +201,14 @@ Un theme que no incluya `bodymodule()` no es considerado compatible con DWK.
 ### X.3 Bloques Genéricos (Opcionales)
 
 DWK permite el uso de bloques genéricos para composición de layout, por ejemplo:
-
-<?php bloque4(); ?>
-
+```php
+<?php 
+bloque2();
+bloque3();
+bloque4(); 
+bloque5();
+?>
+```
 Reglas:
 - Los bloques son opcionales  
 - El theme puede incluirlos o no  
