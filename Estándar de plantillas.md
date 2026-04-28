@@ -214,3 +214,26 @@ Reglas:
 - El theme puede incluirlos o no  
 - El Kernel no depende de su existencia  
 - No deben ser obligatorios para el funcionamiento del sitio
+
+## XI. Reglas de Estilización de Elementos HTML/HTML5
+
+Todo template DWK debe generar y aplicar CSS para **todos los elementos estándar de HTML y HTML5**, incluyendo encabezados (`h1`, `h2`, ...), párrafos (`p`), listas (`ul`, `ol`, `li`), formularios (`form`), campos (`input`, `textarea`, `select`, `button`), tablas (`table`, `thead`, `tbody`, `tr`, `td`, `th`), contenedores (`div`, `span`), y demás etiquetas semánticas.
+
+Los estilos deben aplicarse de forma directa a los selectores de elementos o, en su caso, dentro de un contenedor definido por el tema. Ejemplo:
+```php
+<div class="wrapper">
+  <?php bodymodule(); ?>
+</div>
+```
+El CSS puede implementarse como:
+```css
+.wrapper h1 { /* estilos para h1 dentro del contenedor */ }
+```
+o bien de manera tajante:
+```css
+h1 { /* estilos globales para h1 */ }
+```
+Reglas:
+- El theme debe cubrir todos los elementos básicos para que los módulos del Kernel puedan heredar estilos consistentes.
+- No se permite depender exclusivamente de clases externas; los estilos deben estar definidos para los elementos nativos.
+- La ausencia de esta guía mínima invalida la certificación DWK del theme.
