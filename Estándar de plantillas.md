@@ -237,3 +237,18 @@ Reglas:
 - El theme debe cubrir todos los elementos básicos para que los módulos del Kernel puedan heredar estilos consistentes.
 - No se permite depender exclusivamente de clases externas; los estilos deben estar definidos para los elementos nativos.
 - La ausencia de esta guía mínima invalida la certificación DWK del theme.
+
+### XI.1 Archivo de Guía Obligatorio
+
+Cada theme DWK debe incluir un archivo llamado `codes.php` o `codes.html` en el cual se documente y muestre:
+
+- La guía completa de todos los elementos estilizados (divs, spans, títulos, listas, formularios, inputs, tablas, etc.).
+- Ejemplos de uso de librerías permitidas y su integración correcta.
+- Comportamientos y menucidades del template (hover, focus, active, disabled, etc.).
+- Detalles de implementación para **desktop y mobile**, asegurando consistencia en ambos entornos.
+- Instrucciones claras para que cualquier desarrollador pueda usar e implementar el tema sin ambigüedades.
+
+Reglas:
+- El archivo debe ser autoexplicativo y contener ejemplos prácticos.
+- No debe incluir lógica de negocio ni dependencias externas.
+- La ausencia de este archivo invalida la certificación DWK del theme.
