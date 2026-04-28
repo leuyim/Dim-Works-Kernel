@@ -64,11 +64,210 @@ Lo obligatorio es la separación conceptual de activos, no la jerarquía exacta 
 Es obligatorio centralizar la identidad visual en la raíz del documento mediante CSS nativo para permitir la manipulación dinámica.
 ```css
 :root {
-  --dwk-color-bg: #ffffff;
-  --dwk-color-text: #1a1a1a;
-  --dwk-color-accent: #0d6efd;
-  --dwk-font-base: system-ui, -apple-system, BlinkMacSystemFont;
-  --dwk-radius-base: 8px;
+    /* === 1. DWK Mandatory Baseline Tokens === */
+    --dwk-color-bg: #ffffff;
+    --dwk-color-text: #1a1a1a;
+    --dwk-color-accent: #c5a059;
+    --dwk-font-base: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont;
+    --dwk-radius-base: 12px;
+
+    /* === 2. Paleta de Identidad Emilia Desarrollos === */
+    --brand-color: #c5a059;
+    --brand-hover: #b38f49;
+    --brand-active: #9e7d3a;
+    --brand-light: #fcfaf2;
+    --brand-gradient: linear-gradient(135deg, #c5a059 0%, #b38f49 100%);
+    --brand-shadow: rgba(197, 160, 89, 0.3);
+
+    /* === 3. Layout Base === */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #ffffff;
+    --bg-sidebar: #2d3540;
+    --bg-logo: #1e242b;
+    --bg-hover: #f1f5f9;
+    --bg-active: #e2e8f0;
+
+    /* === 4. Tipografía General === */
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --text-inverse: #ffffff;
+    --text-accent: #c5a059;
+    --text-disabled: #94a3b8;
+
+    /* === 5. Headers & Footers === */
+    --header-bg: var(--bg-secondary);
+    --header-text: var(--text-primary);
+    --header-border: var(--border-color);
+    --footer-bg: var(--bg-sidebar);
+    --footer-text: var(--text-inverse);
+    --footer-border: rgba(255, 255, 255, 0.05);
+
+    /* === 6. Nav Menus & Megamenus === */
+    --nav-bg: transparent;
+    --nav-link: rgba(255, 255, 255, 0.75);
+    --nav-link-hover: #ffffff;
+    --nav-link-active: var(--brand-color);
+    --nav-border: rgba(0, 0, 0, 0.15);
+    --megamenu-bg: var(--bg-secondary);
+    --megamenu-item-hover: var(--bg-hover);
+    --megamenu-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --megamenu-border: var(--border-color);
+
+    /* === 7. Sidebars === */
+    --sidebar-bg: #2d3540;
+    --sidebar-text: rgba(255, 255, 255, 0.75);
+    --sidebar-link: rgba(255, 255, 255, 0.75);
+    --sidebar-link-hover: #ffffff;
+    --sidebar-link-active: var(--brand-color);
+    --sidebar-border: rgba(0, 0, 0, 0.2);
+
+    /* === 8. Modals === */
+    --modal-bg: var(--bg-secondary);
+    --modal-backdrop: rgba(0, 0, 0, 0.5);
+    --modal-border: var(--border-color);
+    --modal-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --modal-header-bg: var(--bg-primary);
+    --modal-footer-bg: var(--bg-primary);
+    --modal-text: var(--text-primary);
+
+    /* === 9. Copyright === */
+    --copyright-bg: transparent;
+    --copyright-text: rgba(255, 255, 255, 0.55);
+    --copyright-border: rgba(0, 0, 0, 0.2);
+
+    /* === 10. Notifications & Alerts === */
+    --notif-bg: var(--bg-secondary);
+    --notif-text: var(--text-primary);
+    --notif-border: var(--border-color);
+    --alert-success-bg: #ecfdf5;
+    --alert-success-text: #047857;
+    --alert-success-border: #a7f3d0;
+    --alert-danger-bg: #fef2f2;
+    --alert-danger-text: #b91c1c;
+    --alert-danger-border: #fecaca;
+    --alert-warning-bg: #fffbeb;
+    --alert-warning-text: #b45309;
+    --alert-warning-border: #fde68a;
+    --alert-info-bg: #eff6ff;
+    --alert-info-text: #1d4ed8;
+    --alert-info-border: #bfdbfe;
+
+    /* === 11. Tables === */
+    --table-bg: var(--bg-secondary);
+    --table-header-bg: var(--bg-primary);
+    --table-header-text: var(--text-muted);
+    --table-row-even: var(--bg-primary);
+    --table-row-odd: var(--bg-secondary);
+    --table-row-hover: var(--bg-hover);
+    --table-border: var(--border-color);
+
+    /* === 12. Forms & Inputs (Text, Select, Date, Mail, Number) === */
+    --input-bg: #ffffff;
+    --input-text: var(--text-primary);
+    --input-border: var(--border-color);
+    --input-focus-border: var(--brand-color);
+    --input-focus-shadow: 0 0 0 4px rgba(197, 160, 89, 0.15);
+    --input-placeholder: var(--text-muted);
+    --input-disabled-bg: var(--bg-active);
+    --input-disabled-text: var(--text-disabled);
+    --input-select-bg: #ffffff;
+    --input-date-bg: #ffffff;
+    --input-mail-bg: #ffffff;
+    --input-number-bg: #ffffff;
+
+    /* === 13. Paginación === */
+    --pagination-bg: var(--bg-primary);
+    --pagination-text: var(--text-secondary);
+    --pagination-hover-bg: var(--bg-hover);
+    --pagination-hover-text: var(--brand-color);
+    --pagination-active-bg: var(--brand-color);
+    --pagination-active-text: var(--text-inverse);
+    --pagination-border: var(--border-color);
+
+    /* === 14. Logos e Imagotipos === */
+    --logo-width: 100%;
+    --logo-filter: none;
+    --imagotipo-color: var(--brand-color);
+    --logo-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    /* === 15. Bloques, Galerías y Carouseles === */
+    --block-bg: var(--bg-secondary);
+    --block-padding: 2rem;
+    --block-border: var(--border-color);
+    --block-radius: var(--radius-card);
+    --block-shadow: var(--s-card);
+    
+    --gallery-grid-gap: 1.5rem;
+    --gallery-item-radius: var(--radius-card);
+    --gallery-item-hover-scale: 1.05;
+    --gallery-caption-bg: rgba(0, 0, 0, 0.7);
+    --gallery-caption-text: #ffffff;
+    
+    --carousel-nav-bg: rgba(255, 255, 255, 0.8);
+    --carousel-nav-hover-bg: #ffffff;
+    --carousel-indicator-bg: rgba(255, 255, 255, 0.4);
+    --carousel-indicator-active-bg: var(--brand-color);
+
+    /* === 16. Titles (Title1, Title2) === */
+    --title1-color: var(--text-primary);
+    --title1-size: 2rem;
+    --title2-color: var(--brand-color);
+    --title2-size: 1.5rem;
+    --title-font: 'Outfit', sans-serif;
+
+    /* === 17. HR (Horizontal Rule) === */
+    --hr-border: var(--border-color);
+    --hr-margin: 1.75rem 0;
+
+    /* === 18. LI (Lists) === */
+    --li-bullet-color: var(--brand-color);
+    --li-hover-bg: var(--bg-hover);
+    --li-spacing: 0.5em;
+
+    /* === 19. Buttons === */
+    --btn-bg: var(--brand-color);
+    --btn-text: var(--text-inverse);
+    --btn-hover-bg: var(--brand-hover);
+    --btn-active-bg: var(--brand-active);
+    --btn-disabled-bg: var(--text-disabled);
+    --btn-alt-bg: #475569;
+    --btn-alt-text: var(--text-inverse);
+    --btn-alt-hover: #334155;
+
+    /* === 20. Links & Hovers === */
+    --link-color: var(--brand-color);
+    --link-hover-color: var(--brand-hover);
+    --link-active-color: var(--brand-active);
+
+    /* === 21. Icons & Emojis === */
+    --icon-color: var(--brand-color);
+    --icon-hover-color: var(--brand-hover);
+    --emoji-size: 1.2rem;
+    --emoji-opacity: 0.9;
+
+    /* === 22. Shadows, Borders & Radius === */
+    --border-color: #e2e8f0;
+    --border-light: #f1f5f9;
+    --border-dark: #cbd5e1;
+    --border-focus: var(--brand-color);
+    --outline-color: rgba(197, 160, 89, 0.2);
+    
+    --radius-card: 12px;
+    --radius-btn: 50px;
+    --radius-input: 8px;
+    --radius-small: 4px;
+    
+    --s-premium: 0 10px 25px rgba(0, 0, 0, 0.03);
+    --s-card: 0 4px 6px rgba(0, 0, 0, 0.05);
+    --s-dropdown: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --s-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+    /* === 23. Navigation & Sidebar specific === */
+    --nav-item-bg-hover: rgba(255, 255, 255, 0.05);
+    --nav-item-bg-active: rgba(197, 160, 89, 0.15);
+    --nav-item-text: rgba(255, 255, 255, 0.75);
+    --nav-item-active-text: #ffffff;
 }
 ```
 En caso de requerir la carga de librerías de terceros (Bootstrap, Tailwind, etc.), estas deben ser referenciadas mediante etiquetas `<script>` o `<link>` en las secciones correspondientes de la plantilla, sin alterar el DOM o el flujo de control del Kernel.
